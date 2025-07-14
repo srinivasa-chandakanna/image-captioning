@@ -1,0 +1,101 @@
+# Dataset paths
+model_tag: "resnet_LSTM"
+dataset: "flickr8k"  # "flickr8k" or "flickr30k"
+data_source: "kaggle"  # "kaggle" or "google_drive"
+
+# used for kaggle data only
+dataset_url: "adityajn105" 
+
+image_path: ""
+captions_path: ""
+artifact_dir: "artifacts"
+output_dir: "outputs"
+
+csv_filename: "captions.csv"
+
+
+    # for google drive
+    #dataset_url: "flickr8k_dataset"
+    #image_path = "Images"
+    #captions_path = "captions.txt"
+    
+    # for kaggle
+    #dataset_url: "adityajn105" 
+    # 8k
+    #image_path = "Images"
+    #captions_path = "captions.txt"
+    # 30k
+    #image_path = "Images/flickr30k_images"
+    #captions_path = "captions.txt"
+    
+# number of samples for retrieval
+num_sample_retrieval: 5
+
+# Device
+device: "cuda"
+#device = "cuda" if torch.cuda.is_available() else "cpu"
+
+# Image preprocessing
+size: 224
+
+# Dataloader
+batch_size: 32
+num_workers: 1
+
+# Optimizer & Scheduler
+epochs: 20
+embed_size: 400
+hidden_size: 512
+num_layers: 2
+learning_rate: 0.0001
+encoder_lr: 1e-4
+decoder_lr: 1e-3
+encoder_lr2: 1e-5
+
+head_lr: 0.001
+image_encoder_lr: 0.0001
+text_encoder_lr: 0.00001
+weight_decay: 0.001
+patience: 3
+factor: 0.8
+
+
+# Model
+model_name: "resnet50"
+pretrained: true
+trainable: true
+
+# Image encoder
+image_embedding: 2048
+
+# Text encoder
+text_encoder_model: "distilbert-base-uncased"
+text_embedding: 768
+text_tokenizer: "distilbert-base-uncased"
+max_length: 200
+
+# Projection head; used for both image and text encoders
+num_projection_layers: 1
+projection_dim: 256
+dropout: 0.1
+
+# Contrastive loss
+temperature: 1.0
+
+# Normalization values
+imagenet_norm:
+  mean: [0.485, 0.456, 0.406]
+  std:  [0.229, 0.224, 0.225]
+
+flickr8k_norm:
+  mean: [0.4580, 0.4461, 0.4039]
+  std:  [0.2320, 0.2230, 0.2272]
+
+flickr30k_norm:
+  mean: [0.4441, 0.4211, 0.3847]
+  std:  [0.2416, 0.2311, 0.2328]
+
+# Debug
+#debug: True
+debug: False
+
