@@ -1,0 +1,72 @@
+########################################################
+# Requirements for both Windows Laptop & Google Colab
+########################################################
+
+# Core ML
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+
+# NLP & Transformers
+spacy==3.7.2
+nltk==3.8.1
+sentence-transformers==2.7.0
+transformers==4.39.3
+
+# Math / Data / Utils
+scikit-learn==1.4.2
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.11.3
+tqdm==4.66.2
+pyyaml==6.0.1
+
+# Image Augmentations (compatible with spacy)
+albumentations==1.3.1
+pydantic==1.10.13
+typing-extensions>=4.12.0
+
+# Jupyter & Notebook (safe versions)
+jupyterlab==3.6.6
+notebook==6.5.6
+jupyter-client==7.4.9
+pyzmq==24.0.1
+ipykernel==6.29.4
+
+# Visualizations
+matplotlib==3.8.4
+seaborn==0.13.2
+
+# Others
+kagglehub==0.3.12
+huggingface-hub==0.20.3
+
+
+
+# Others (needed for some SBERT backends)
+huggingface-hub==0.20.3
+
+#torch>=2.6.0
+#torchvision>=0.21.0
+#transformers==4.52.4
+#pandas==2.3.0
+#numpy==2.2.6
+#scikit-learn==1.6.1
+#matplotlib==3.10.0
+#tqdm==4.67.1
+#pyyaml==6.0.2
+#nltk==3.9.1
+#kagglehub==0.3.12
+#scipy==1.16.0
+
+########################################################
+# CUDA specific installs (manual, skip if on CPU)
+#
+# On Windows:
+# pip install torch==2.7.1+cu118 torchvision==0.22.1+cu118 torchaudio==2.3.1+cu118 \
+#   --extra-index-url https://download.pytorch.org/whl/cu118
+#
+# On Colab:
+# pip install torch==2.6.0+cu124 torchvision==0.21.0+cu124 \
+#   --extra-index-url https://download.pytorch.org/whl/cu124
+########################################################
